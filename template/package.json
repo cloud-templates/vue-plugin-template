@@ -10,7 +10,7 @@
   {{/unless_eq}}
   "scripts": {
     "build": "node build/build.js",
-    "lint": "eslint src"
+    "lint": "eslint --ext .js,.vue src"
   },
   {{#unless_eq githubAccount ""}}
   "repository": {

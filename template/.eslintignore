@@ -1,1 +1,8 @@
+build/*.js
 config/*.js
+
+dist
+node_modules
+dev
+npm-scripts
+
