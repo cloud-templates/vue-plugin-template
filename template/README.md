@@ -16,15 +16,7 @@ https://unpkg.com/{{ name }}/dist/{{ name }}
 
     $ yarn add {{ name }}
 
-
-You will have to clone directly from GitHub and build `{{ name }}` yourself if
-you want to use the latest dev build.
-
-    $ git clone https://github.com/{{ githubAccount }}/{{ name }}.git node_modules/{{ name }}
-    $ cd node_modules/{{ name }}
-    $ npm install
-    $ npm run build
-{{/unless_eq}}
+{{#unless_eq githubAccount ""}}
 
 
 ## Getting Started
