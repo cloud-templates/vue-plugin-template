@@ -1,0 +1,25 @@
+{
+  "name": "vue-plugin-template",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "A vue.js plugin.",
+  "author": {
+    "name": "cklwblove",
+    "email": "lwbhtml@gmail.com"
+  },
+  "keywords": [
+    "plugin",
+    "template",
+    "vue",
+    "vuejs"
+  ],
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cloud-templates/vue-plugin-template.git"
+  },
+  "devDependencies": {
+    "cloud-cli": "^1.1.1"
+  }
+}
