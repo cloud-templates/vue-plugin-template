@@ -1,5 +1,32 @@
 # {{ name }}
 
+## Usage
+
+### Direct Download / CDN
+
+https://unpkg.com/{{ name }}/dist/{{ name }}
+
+[unpkg.com](https://unpkg.com) provides NPM-based CDN links. The above link will always point to the latest release on NPM. You can also use a specific version/tag via URLs like https://unpkg.com/{{ name }}@{{ version }}/dist/{{ name }}.js
+
+### NPM
+
+    $ npm install {{ name }}
+
+### Yarn
+
+    $ yarn add {{ name }}
+
+
+You will have to clone directly from GitHub and build `{{ name }}` yourself if
+you want to use the latest dev build.
+
+    $ git clone https://github.com/{{ githubAccount }}/{{ name }}.git node_modules/{{ name }}
+    $ cd node_modules/{{ name }}
+    $ npm install
+    $ npm run build
+{{/unless_eq}}
+
+
 ## Getting Started
 
 > We will be using [ES2015](https://github.com/lukehoban/es6features) in the code samples in the guide.
@@ -41,6 +68,6 @@ Output the following:
 </div>
 ```
 
-## :copyright: License
+### :copyright: License
 
 [MIT](http://opensource.org/licenses/MIT)

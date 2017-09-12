@@ -3,7 +3,7 @@ const githubAccountDefault = os.userInfo().username;
 
 module.exports = {
   helpers: {
-    now_year: function () {
+    nowYear: function () {
       return new Date().getFullYear();
     },
     authorFullNameFrom: function (author) {
