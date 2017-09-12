@@ -4,7 +4,7 @@
   "version": "{{ version }}",
   {{#unless_eq githubAccount ""}}
   "author": {
-    "name": "{{ authorFullNameFrom author }",
+    "name": "{{ authorFullNameFrom author }}",
     "email": "{{ authorEmailFrom author }}"
   },
   {{/unless_eq}}
