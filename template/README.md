@@ -16,8 +16,6 @@ https://unpkg.com/{{ name }}/dist/{{ name }}
 
     $ yarn add {{ name }}
 
-{{#unless_eq githubAccount ""}}
-
 
 ## Getting Started
 
