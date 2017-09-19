@@ -1,21 +1,35 @@
-const fs = require('fs');
-const exist = fs.existsSync;
-const mkdir = fs.mkdirSync;
-const getAllEntries = require('./entry').getAllEntries;
-const build = require('./bundle');
+require('./check-versions')()
 
-if (!exist('dist')) {
-  mkdir('dist');
-}
+process.env.NODE_ENV = 'production'
 
-let entries = getAllEntries();
+var ora = require('ora')
+var rm = require('rimraf')
+var path = require('path')
+var chalk = require('chalk')
+var webpack = require('webpack')
+var config = require('./config')
+var webpackConfig = require('./webpack.prod.conf')
 
-// filter entries via command line arg
-if (process.argv[2]) {
-  const filters = process.argv[2].split(',');
-  entries = entries.filter(b => {
-    return filters.some(f => b.dest.indexOf(f) > -1)
-  });
-}
+var spinner = ora('building for production...')
+spinner.start()
 
-build(entries);
+rm(config.build.assetsRoot, err => {
+  if (err) throw err
+  webpack(webpackConfig, function (err, stats) {
+    spinner.stop()
+    if (err) throw err
+    process.stdout.write(stats.toString({
+      colors: true,
+      modules: false,
+      children: false,
+      chunks: false,
+      chunkModules: false
+    }) + '\n\n')
+
+    console.log(chalk.cyan('  Build complete.\n'))
+    console.log(chalk.yellow(
+      '  Tip: built files are meant to be served over an HTTP server.\n' +
+      '  Opening index.html over file:// won\'t work.\n'
+    ))
+  })
+})

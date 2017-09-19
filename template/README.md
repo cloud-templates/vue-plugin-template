@@ -2,12 +2,6 @@
 
 ## Usage
 
-### Direct Download / CDN
-
-https://unpkg.com/{{ name }}/dist/{{ name }}
-
-[unpkg.com](https://unpkg.com) provides NPM-based CDN links. The above link will always point to the latest release on NPM. You can also use a specific version/tag via URLs like https://unpkg.com/{{ name }}@{{ version }}/dist/{{ name }}.js
-
 ### NPM
 
     $ npm install {{ name }}
@@ -26,7 +20,7 @@ https://unpkg.com/{{ name }}/dist/{{ name }}
 
 ```html
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
-<script src="https://unpkg.com/{{ name }}/dist/{{ name }}.min.js"></script>
+<script src="dist/{{ name }}.min.js"></script>
 
 <div id="#app">
   <!-- TODO: here the outputs -->
